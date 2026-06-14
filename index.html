@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dealer Resmi Jeep Jakarta — dealerjeepindo.com</title>
+<meta name="description" content="Dealer resmi Jeep Jakarta. Jeep Wrangler, Rubicon & Gladiator. Unit ready stock, garansi resmi. Hubungi kami via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-alt:#F4F3ED;
+    --ink:#17190F;
+    --ink-soft:#54574A;
+    --black:#0E0F0C;
+    --olive:#5E6E32;
+    --olive-br:#76893F;
+    --olive-text:#44521F;
+    --bar:#4C5A2A;
+    --bone:#F2EFE6;
+    --wa:#25D366;
+    --line:rgba(23,25,15,.12);
+    --line-d:rgba(242,239,230,.12);
+    --shadow:0 18px 40px -26px rgba(23,25,15,.4);
+    --shadow-h:0 26px 50px -24px rgba(23,25,15,.45);
+    --maxw:1240px;
+    --hpad:clamp(20px,5vw,52px);
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ::selection{background:var(--olive);color:#fff;}
+  .display{font-family:"Saira Condensed",sans-serif;}
+
+  /* WhatsApp button helper */
+  .wa-btn{display:inline-flex;align-items:center;gap:10px;background:var(--olive);color:#fff;font-weight:600;font-size:15px;padding:14px 28px;border-radius:30px;transition:background .2s,transform .2s;cursor:pointer;}
+  .wa-btn:hover{background:var(--olive-br);transform:translateY(-2px);}
+  .wa-btn i{font-size:17px;line-height:1;flex:none;}
+
+  /* ---------- TOP BAR ---------- */
+  .topbar{background:var(--bar);font-size:13px;}
+  .topbar .in{max-width:var(--maxw);margin:0 auto;padding:9px var(--hpad);display:flex;align-items:center;gap:26px;}
+  .topbar a{color:var(--bone);display:inline-flex;align-items:center;gap:8px;opacity:.95;transition:opacity .2s;}
+  .topbar a:hover{opacity:1;}
+  .topbar svg{width:14px;height:14px;flex:none;}
+
+  /* ---------- NAV ---------- */
+  .nav{position:sticky;top:0;z-index:50;background:var(--black);}
+  .nav .in{max-width:var(--maxw);margin:0 auto;padding:0 var(--hpad);height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .logo{font-family:"Saira Condensed",sans-serif;font-weight:800;font-size:34px;letter-spacing:.02em;line-height:1;color:#fff;}
+  .menu{display:flex;align-items:center;gap:30px;}
+  .menu a{font-size:15px;font-weight:500;color:var(--bone);padding:4px 0;transition:color .2s;}
+  .menu a:hover,.menu a.active{color:var(--olive-br);}
+  .nav-icons{display:flex;align-items:center;gap:14px;}
+  .nav-icons .search{width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--bone);background:none;border:0;cursor:pointer;border-radius:50%;transition:background .2s;}
+  .nav-icons .search:hover{background:rgba(242,239,230,.08);}
+  .nav-icons .search svg{width:19px;height:19px;}
+  .burger{display:none;width:44px;height:44px;border:1px solid var(--line-d);background:none;border-radius:3px;cursor:pointer;padding:0;align-items:center;justify-content:center;}
+  .burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:var(--bone);position:relative;transition:transform .25s,background .2s;}
+  .burger span::before,.burger span::after{content:"";position:absolute;left:0;}
+  .burger span::before{top:-6px;}.burger span::after{top:6px;}
+  .burger[aria-expanded="true"] span{background:transparent;}
+  .burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg);}
+  .burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg);}
+
+  /* ---------- HERO SLIDER ---------- */
+  .hero{position:relative;min-height:clamp(520px,78vh,780px);overflow:hidden;background:#0E0F0C;}
+  .slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .8s ease;display:flex;align-items:center;justify-content:center;text-align:center;}
+  .slide.is-active{opacity:1;visibility:visible;}
+  .slide .bg{position:absolute;inset:0;background-size:cover;background-position:center;}
+  .slide:nth-child(1) .bg{background:linear-gradient(120deg,#1c2218 0%,#0E0F0C 55%,#23291c 100%);}
+  .slide:nth-child(2) .bg{background:linear-gradient(120deg,#241f18 0%,#0E0F0C 55%,#2a2418 100%);}
+  .slide:nth-child(3) .bg{background:linear-gradient(120deg,#181d20 0%,#0E0F0C 55%,#1d2428 100%);}
+  .slide .bg::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 120% at 50% 45%,transparent 30%,rgba(0,0,0,.55) 100%);}
+  .slide .content{position:relative;z-index:2;padding:0 24px;}
+  .slide h2{font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:clamp(2.6rem,7vw,5.4rem);line-height:1;margin:0 0 14px;color:#fff;letter-spacing:.01em;}
+  .slide .tagline{font-family:"Saira Condensed",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.26em;font-size:clamp(13px,1.7vw,17px);color:var(--bone);margin:0 0 30px;}
+  .btn-outline{display:inline-block;border:1px solid rgba(255,255,255,.85);color:#fff;font-size:15px;font-weight:500;padding:13px 34px;border-radius:2px;transition:background .2s,color .2s;}
+  .btn-outline:hover{background:#fff;color:var(--black);}
+  .dots{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:5;display:flex;gap:11px;}
+  .dots button{width:11px;height:11px;border-radius:50%;border:0;background:rgba(255,255,255,.4);cursor:pointer;padding:0;transition:background .25s,transform .25s;}
+  .dots button.is-active{background:#fff;transform:scale(1.15);}
+  .ph-note{position:absolute;left:var(--hpad);bottom:24px;z-index:5;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,239,230,.55);}
+
+  /* ---------- shared section head ---------- */
+  .head{text-align:center;max-width:660px;margin:0 auto clamp(40px,5vw,56px);}
+  .eyebrow{font-family:"Saira Condensed",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:14px;color:var(--olive-text);margin-bottom:12px;}
+  .head h2{font-family:"Saira Condensed",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1.04;margin:0 0 14px;color:var(--ink);}
+  .head p{color:var(--ink-soft);font-size:16.5px;margin:0;}
+
+  /* ---------- ABOUT US ---------- */
+  .about{background:var(--bg);}
+  .about .in{max-width:var(--maxw);margin:0 auto;padding:clamp(54px,8vw,92px) var(--hpad);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,5vw,64px);align-items:center;}
+  .about-img{aspect-ratio:4/5;border-radius:8px;background:linear-gradient(150deg,#ECEAE0,#D8D6CA);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;}
+  .about-img .lab{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);text-align:center;padding:0 20px;}
+  .about-img .lab b{color:var(--olive-text);font-weight:600;}
+  .about-text .eyebrow{margin-bottom:14px;}
+  .about-text h2{font-family:"Saira Condensed",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1;margin:0 0 22px;color:var(--ink);}
+  .about-text p{color:var(--ink-soft);font-size:16.5px;margin:0 0 30px;max-width:48ch;}
+
+  /* ---------- WHY ---------- */
+  .why{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .why .in{max-width:var(--maxw);margin:0 auto;padding:clamp(56px,8vw,92px) var(--hpad);}
+  .why .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .why .card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:30px 26px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;}
+  .why .card:hover{transform:translateY(-5px);box-shadow:var(--shadow-h);}
+  .why .ic{width:50px;height:50px;border-radius:12px;background:rgba(94,110,50,.1);display:flex;align-items:center;justify-content:center;color:var(--olive-text);margin-bottom:18px;}
+  .why .ic svg{width:25px;height:25px;}
+  .why h3{font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:21px;margin:0 0 9px;color:var(--ink);letter-spacing:.01em;}
+  .why p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+
+  /* ---------- MODELS ---------- */
+  .models{background:var(--bg);}
+  .models .in{max-width:var(--maxw);margin:0 auto;padding:clamp(56px,8vw,92px) var(--hpad);}
+  .models .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;}
+  .car{background:var(--bg);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;}
+  .car:hover{transform:translateY(-5px);box-shadow:var(--shadow-h);}
+  .car .img{aspect-ratio:16/10;background:linear-gradient(150deg,#ECEAE0,#D8D6CA);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);}
+  .car .img .lab{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);}
+  .car .body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1;}
+  .car h3{font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:23px;margin:0 0 4px;color:var(--ink);letter-spacing:.01em;}
+  .car .basis{font-size:12px;color:var(--ink-soft);margin:0 0 16px;}
+  .car .price{font-family:"Saira Condensed",sans-serif;font-weight:800;font-size:25px;color:var(--olive-text);line-height:1;margin-top:auto;}
+  .car .price span{font-family:"IBM Plex Sans";font-weight:500;font-size:12.5px;color:var(--ink-soft);display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:.08em;}
+  .car .btn-card{margin-top:18px;justify-content:center;width:100%;padding:12px 20px;font-size:14px;border-radius:6px;}
+  .models .note{margin:30px auto 0;text-align:center;font-size:12.5px;color:var(--ink-soft);max-width:600px;}
+
+  /* ---------- CTA BAND ---------- */
+  .cta{background:var(--olive);position:relative;overflow:hidden;}
+  .cta::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 140% at 100% 0%,rgba(255,255,255,.10),transparent 60%);}
+  .cta .in{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:clamp(54px,7vw,84px) var(--hpad);text-align:center;}
+  .cta h2{font-family:"Saira Condensed",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.05;margin:0 0 16px;color:#fff;}
+  .cta p{color:rgba(255,255,255,.92);font-size:16.5px;margin:0 auto 30px;max-width:50ch;}
+  .cta .btn-light{display:inline-flex;align-items:center;gap:11px;background:#fff;color:var(--olive-text);font-weight:700;font-size:16px;padding:15px 32px;border-radius:30px;transition:transform .2s,box-shadow .2s;box-shadow:0 14px 30px -12px rgba(0,0,0,.35);}
+  .cta .btn-light:hover{transform:translateY(-2px);box-shadow:0 20px 40px -14px rgba(0,0,0,.4);}
+  .cta .btn-light i{font-size:20px;line-height:1;color:var(--wa);}
+
+  /* ---------- FOOTER ---------- */
+  .footer{background:var(--black);color:var(--bone);}
+  .footer .in{max-width:var(--maxw);margin:0 auto;padding:clamp(52px,7vw,72px) var(--hpad) 0;}
+  .footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1.4fr;gap:44px;padding-bottom:46px;}
+  .footer .logo{margin-bottom:16px;}
+  .footer .blurb{color:#B6B8AB;font-size:14.5px;margin:0 0 18px;max-width:38ch;}
+  .footer h4{font-family:"Saira Condensed",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:15px;color:#fff;margin:0 0 18px;}
+  .footer .links a{display:block;color:#B6B8AB;padding:6px 0;font-size:14.5px;transition:color .2s;}
+  .footer .links a:hover{color:var(--olive-br);}
+  .footer .contact{list-style:none;padding:0;margin:0;}
+  .footer .contact li{display:flex;gap:11px;color:#B6B8AB;font-size:14.5px;margin-bottom:13px;align-items:flex-start;}
+  .footer .contact svg{width:17px;height:17px;flex:none;color:var(--olive-br);margin-top:3px;}
+  .footer .social{display:flex;gap:11px;margin-top:6px;}
+  .footer .social a{width:38px;height:38px;border:1px solid var(--line-d);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#B6B8AB;transition:background .2s,color .2s,border-color .2s;}
+  .footer .social a:hover{background:var(--olive);color:#fff;border-color:var(--olive);}
+  .footer .social svg{width:17px;height:17px;}
+  .copyright{border-top:1px solid var(--line-d);padding:20px 0;text-align:center;font-size:13px;color:#8B8D81;}
+  .copyright b{color:#B6B8AB;font-weight:500;}
+
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .wa{position:fixed;right:22px;bottom:22px;z-index:80;display:flex;align-items:center;}
+  .wa .pill{background:#fff;color:#222;font-size:14px;font-weight:600;padding:0 16px;height:46px;display:flex;align-items:center;border-radius:24px;box-shadow:0 8px 24px -8px rgba(0,0,0,.4);margin-right:10px;white-space:nowrap;}
+  .wa .circle{width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px -6px rgba(37,211,102,.5);transition:transform .2s;}
+  .wa:hover .circle{transform:scale(1.07);}
+  .wa .circle i{font-size:30px;line-height:1;color:#fff;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1000px){
+    .why .grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:900px){
+    .menu,.nav-icons .search{display:none;}
+    .burger{display:flex;}
+    .menu.open{display:flex;position:fixed;top:78px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(14,15,12,.98);border-bottom:1px solid var(--line-d);padding:6px var(--hpad) 16px;}
+    .menu.open a{padding:15px 0;border-bottom:1px solid var(--line-d);font-size:16px;}
+    .about .in{grid-template-columns:1fr;gap:30px;}
+    .about-img{max-width:380px;margin:0 auto;width:100%;}
+    .footer .cols{grid-template-columns:1fr 1fr;gap:34px;}
+  }
+  @media (max-width:560px){
+    .topbar .in{gap:16px;font-size:12px;}
+    .topbar .email{display:none;}
+    .ph-note{display:none;}
+    .wa .pill{display:none;}
+    .why .grid{grid-template-columns:1fr;}
+    .footer .cols{grid-template-columns:1fr;gap:30px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition-duration:.001s!important;}
+    .slide{transition:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="in">
+    <a href="tel:+62811XXXXXXX">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      0811-XXXX-XXXX
+    </a>
+    <a class="email" href="mailto:halo@dealerjeepindo.com">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      halo@dealerjeepindo.com
+    </a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="in">
+    <a href="#" class="logo" aria-label="dealerjeepindo.com">Jeep</a>
+    <div class="menu" id="menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="tipe-mobil.html">Tipe Mobil</a>
+      <a href="harga.html">Harga</a>
+      <a href="#">Info &amp; Promo</a>
+      <a href="#">Galeri</a>
+      <a href="#">Video</a>
+      <a href="kontak.html">Kontak</a>
+    </div>
+    <div class="nav-icons">
+      <button class="search" aria-label="Cari"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+      <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SLIDER -->
+<section class="hero" aria-label="Sorotan model Jeep">
+  <div class="slide is-active">
+    <div class="bg"></div>
+    <div class="content">
+      <h2>Jeep Wrangler</h2>
+      <p class="tagline">Enjoy The Ride</p>
+      <a href="tipe-mobil.html" class="btn-outline">Klik Disini</a>
+    </div>
+  </div>
+  <div class="slide">
+    <div class="bg"></div>
+    <div class="content">
+      <h2>Jeep Rubicon</h2>
+      <p class="tagline">Taklukkan Segala Medan</p>
+      <a href="tipe-mobil.html" class="btn-outline">Klik Disini</a>
+    </div>
+  </div>
+  <div class="slide">
+    <div class="bg"></div>
+    <div class="content">
+      <h2>Jeep Gladiator</h2>
+      <p class="tagline">Tangguh Tanpa Batas</p>
+      <a href="tipe-mobil.html" class="btn-outline">Klik Disini</a>
+    </div>
+  </div>
+  <div class="dots" id="dots" aria-label="Pilih slide">
+    <button class="is-active" aria-label="Slide 1"></button>
+    <button aria-label="Slide 2"></button>
+    <button aria-label="Slide 3"></button>
+  </div>
+  <span class="ph-note">Area foto — ganti dengan foto Jeep tiap slide</span>
+</section>
+
+<!-- TENTANG KAMI -->
+<section class="about" id="tentang">
+  <div class="in">
+    <div class="about-img">
+      <span class="lab">Foto showroom / unit<br><b>ganti di sini</b></span>
+    </div>
+    <div class="about-text">
+      <p class="eyebrow">Tentang Kami</p>
+      <h2>Dealer Resmi Jeep</h2>
+      <p>Selamat datang di dunia Jeep. Sebagai dealer resmi, kami menghadirkan jajaran lengkap kendaraan dari merek legendaris ini — dari kemampuan off-road yang tangguh hingga desain yang ikonik. Tim kami siap membantu Anda menemukan model Jeep yang paling sesuai dengan gaya hidup aktif Anda, lengkap dengan layanan dan garansi resmi.</p>
+      <a href="https://wa.me/62811XXXXXXX?text=Halo%2C%20saya%20mau%20tanya%20unit%20Jeep" class="wa-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+        Hubungi Kami
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MENGAPA MEMILIH KAMI -->
+<section class="why" id="kenapa">
+  <div class="in">
+    <div class="head">
+      <p class="eyebrow">Mengapa Memilih Kami</p>
+      <h2>Pengalaman Beli Jeep yang Berbeda</h2>
+      <p>Dari pemilihan unit sampai layanan purna jual, kami pastikan setiap langkah mudah dan terpercaya.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.4 8.4 8 11 4.6-2.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Dealer Resmi</h3>
+        <p>Unit baru bergaransi resmi dengan dokumen lengkap dan proses yang transparan.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 3h13v13H1z"/><path d="M14 8h4l3 3v5h-7"/><circle cx="6" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg></div>
+        <h3>Unit Ready Stock</h3>
+        <p>Berbagai tipe dan warna tersedia, siap kirim tanpa indent yang lama.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6Z"/></svg></div>
+        <h3>Layanan After-Sales</h3>
+        <p>Servis berkala, suku cadang asli, dan dukungan purna jual yang lengkap.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+        <h3>Pembiayaan &amp; Trade-In</h3>
+        <p>Bantuan kredit, leasing, dan tukar tambah agar prosesnya lebih ringan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPE MOBIL JEEP -->
+<section class="models" id="tipe">
+  <div class="in">
+    <div class="head">
+      <p class="eyebrow">Tipe Mobil</p>
+      <h2>Jajaran Jeep Terbaru</h2>
+      <p>Harga on-the-road wilayah Jakarta. Hubungi kami untuk ketersediaan warna &amp; penawaran terbaik.</p>
+    </div>
+    <div class="grid">
+
+      <div class="car">
+        <div class="img"><span class="lab">Foto Rubicon Whitecap</span></div>
+        <div class="body">
+          <h3>Rubicon Whitecap Edition 2026</h3>
+          <p class="basis">All Colors · OTR Jakarta</p>
+          <div class="price"><span>Harga</span>Rp 2.499.000.000</div>
+          <a href="https://wa.me/62811XXXXXXX?text=Halo%2C%20saya%20tertarik%20Rubicon%20Whitecap%20Edition%202026" class="wa-btn btn-card">
+            <i class="fa-brands fa-whatsapp"></i>
+            Hubungi Kami
+          </a>
+        </div>
+      </div>
+
+      <div class="car">
+        <div class="img"><span class="lab">Foto Rubicon 2 Doors</span></div>
+        <div class="body">
+          <h3>Rubicon 2 Doors</h3>
+          <p class="basis">Black &amp; White · OTR Jakarta</p>
+          <div class="price"><span>Mulai dari</span>Rp 2.259.000.000</div>
+          <a href="https://wa.me/62811XXXXXXX?text=Halo%2C%20saya%20tertarik%20Rubicon%202%20Doors" class="wa-btn btn-card">
+            <i class="fa-brands fa-whatsapp"></i>
+            Hubungi Kami
+          </a>
+        </div>
+      </div>
+
+      <div class="car">
+        <div class="img"><span class="lab">Foto Rubicon 4 Doors</span></div>
+        <div class="body">
+          <h3>Rubicon 4 Doors</h3>
+          <p class="basis">Black &amp; White · OTR Jakarta</p>
+          <div class="price"><span>Mulai dari</span>Rp 2.409.000.000</div>
+          <a href="https://wa.me/62811XXXXXXX?text=Halo%2C%20saya%20tertarik%20Rubicon%204%20Doors" class="wa-btn btn-card">
+            <i class="fa-brands fa-whatsapp"></i>
+            Hubungi Kami
+          </a>
+        </div>
+      </div>
+
+      <div class="car">
+        <div class="img"><span class="lab">Foto Rubicon Gladiator</span></div>
+        <div class="body">
+          <h3>Rubicon Gladiator</h3>
+          <p class="basis">Black &amp; White · OTR Jakarta</p>
+          <div class="price"><span>Mulai dari</span>Rp 2.599.000.000</div>
+          <a href="https://wa.me/62811XXXXXXX?text=Halo%2C%20saya%20tertarik%20Rubicon%20Gladiator" class="wa-btn btn-card">
+            <i class="fa-brands fa-whatsapp"></i>
+            Hubungi Kami
+          </a>
+        </div>
+      </div>
+
+      <div class="car">
+        <div class="img"><span class="lab">Foto Rubicon 85th Anniversary</span></div>
+        <div class="body">
+          <h3>Rubicon 85th Anniversary 2026</h3>
+          <p class="basis">All Colors · OTR Jakarta</p>
+          <div class="price"><span>Harga</span>Rp 2.499.000.000</div>
+          <a href="https://wa.me/62811XXXXXXX?text=Halo%2C%20saya%20tertarik%20Rubicon%2085th%20Anniversary%202026" class="wa-btn btn-card">
+            <i class="fa-brands fa-whatsapp"></i>
+            Hubungi Kami
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <p class="note">*Harga dapat berubah sewaktu-waktu menyesuaikan kebijakan pabrikan dan kondisi pasar. Pilihan warna selain Black &amp; White dikenakan penyesuaian harga.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="in">
+    <h2>Siap Membawa Pulang Jeep Impian Anda?</h2>
+    <p>Konsultasikan kebutuhan Anda dengan tim kami sekarang — gratis dan tanpa kewajiban. Dapatkan penawaran terbaik hari ini.</p>
+    <a href="https://wa.me/62811XXXXXXX?text=Halo%2C%20saya%20mau%20konsultasi%20unit%20Jeep" class="btn-light">
+      <i class="fa-brands fa-whatsapp"></i>
+      Hubungi via WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+  <div class="in">
+    <div class="cols">
+      <div>
+        <div class="logo">Jeep</div>
+        <p class="blurb">Dealer resmi Jeep di Jakarta. Menghadirkan jajaran lengkap kendaraan Jeep dengan layanan dan garansi resmi.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.3-.4-4.9a2.6 2.6 0 0 0-1.8-1.8C19.2 5 12 5 12 5s-7.2 0-8.8.4A2.6 2.6 0 0 0 1.4 7.2C1 8.7 1 12 1 12s0 3.3.4 4.8a2.6 2.6 0 0 0 1.8 1.8C4.8 19 12 19 12 19s7.2 0 8.8-.4a2.6 2.6 0 0 0 1.8-1.8C23 15.3 23 12 23 12ZM10 15V9l5 3-5 3Z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="tipe-mobil.html">Tipe Mobil</a>
+          <a href="harga.html">Harga</a>
+          <a href="#">Info &amp; Promo</a>
+          <a href="#">Galeri</a>
+          <a href="#">Video</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul class="contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Jl. Placeholder No. 00, Jakarta Utara, DKI Jakarta</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>0811-XXXX-XXXX</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span>halo@dealerjeepindo.com</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Senin–Sabtu · 09.00–18.00 WIB</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 <b>dealerjeepindo.com</b> — Dealer Resmi Jeep. Hak cipta dilindungi.
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa" href="https://wa.me/62811XXXXXXX?text=Halo%2C%20saya%20mau%20tanya%20unit%20Jeep" aria-label="Hubungi via WhatsApp">
+  <span class="pill">Hubungi Kami</span>
+  <span class="circle"><i class="fa-brands fa-whatsapp"></i></span>
+</a>
+
+<script>
+  (function(){
+    var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+    burger.addEventListener('click',function(){
+      var open=menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded',open);
+    });
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');});});
+
+    var slides=document.querySelectorAll('.hero .slide'),dots=document.querySelectorAll('#dots button'),i=0,timer;
+    function go(n){
+      slides[i].classList.remove('is-active');dots[i].classList.remove('is-active');
+      i=(n+slides.length)%slides.length;
+      slides[i].classList.add('is-active');dots[i].classList.add('is-active');
+    }
+    function start(){timer=setInterval(function(){go(i+1);},5500);}
+    dots.forEach(function(d,n){d.addEventListener('click',function(){go(n);clearInterval(timer);start();});});
+    start();
+  })();
+</script>
+</body>
+</html>
