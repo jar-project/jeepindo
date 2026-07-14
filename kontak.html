@@ -3,235 +3,255 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kontak — dealerjeepindo.com</title>
-<meta name="description" content="Hubungi dealer resmi Jeep Jakarta. Alamat showroom, telepon, email, dan WhatsApp.">
+<title>Kontak | Dealer Resmi Jeep Jakarta</title>
+<meta name="description" content="Hubungi Dealer Resmi Jeep Jakarta. Showroom Plaza Indomobil TB. Simatupang. WhatsApp 0813-8244-3832.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-<style>
-  :root{--bg:#FFFFFF;--bg-alt:#F4F3ED;--ink:#17190F;--ink-soft:#54574A;--black:#0E0F0C;--olive:#5E6E32;--olive-br:#76893F;--olive-text:#44521F;--bar:#4C5A2A;--bone:#F2EFE6;--wa:#25D366;--line:rgba(23,25,15,.12);--line-d:rgba(242,239,230,.12);--maxw:1240px;--hpad:clamp(20px,5vw,52px);}
-  *,*::before,*::after{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-  a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}
-  ::selection{background:var(--olive);color:#fff;}
-  .wa-btn{display:inline-flex;align-items:center;gap:10px;background:var(--olive);color:#fff;font-weight:600;font-size:15px;padding:14px 28px;border-radius:30px;transition:background .2s,transform .2s;cursor:pointer;border:0;}
-  .wa-btn:hover{background:var(--olive-br);transform:translateY(-2px);}
-  .wa-btn i{font-size:17px;line-height:1;flex:none;}
-  .topbar{background:var(--bar);font-size:13px;}
-  .topbar .in{max-width:var(--maxw);margin:0 auto;padding:9px var(--hpad);display:flex;align-items:center;gap:26px;}
-  .topbar a{color:var(--bone);display:inline-flex;align-items:center;gap:8px;opacity:.95;transition:opacity .2s;}
-  .topbar a:hover{opacity:1;}.topbar svg{width:14px;height:14px;flex:none;}
-  .nav{position:sticky;top:0;z-index:50;background:var(--black);}
-  .nav .in{max-width:var(--maxw);margin:0 auto;padding:0 var(--hpad);height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
-  .logo{font-family:"Saira Condensed",sans-serif;font-weight:800;font-size:34px;letter-spacing:.02em;line-height:1;color:#fff;}
-  .menu{display:flex;align-items:center;gap:30px;}
-  .menu a{font-size:15px;font-weight:500;color:var(--bone);padding:4px 0;transition:color .2s;}
-  .menu a:hover,.menu a.active{color:var(--olive-br);}
-  .nav-icons{display:flex;align-items:center;gap:14px;}
-  .nav-icons .search{width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--bone);background:none;border:0;cursor:pointer;border-radius:50%;transition:background .2s;}
-  .nav-icons .search:hover{background:rgba(242,239,230,.08);}.nav-icons .search svg{width:19px;height:19px;}
-  .burger{display:none;width:44px;height:44px;border:1px solid var(--line-d);background:none;border-radius:3px;cursor:pointer;padding:0;align-items:center;justify-content:center;}
-  .burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:var(--bone);position:relative;transition:transform .25s,background .2s;}
-  .burger span::before,.burger span::after{content:"";position:absolute;left:0;}
-  .burger span::before{top:-6px;}.burger span::after{top:6px;}
-  .burger[aria-expanded="true"] span{background:transparent;}
-  .burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg);}
-  .burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg);}
-  .page-hero{background:var(--black);position:relative;overflow:hidden;}
-  .page-hero::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 130% at 100% 0,rgba(94,110,50,.28),transparent 60%);}
-  .page-hero .in{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:clamp(46px,7vw,78px) var(--hpad);}
-  .page-hero .crumb{font-size:13px;color:#9A9C90;margin-bottom:10px;}
-  .page-hero .crumb a{color:var(--olive-br);}
-  .page-hero h1{font-family:"Saira Condensed",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1;margin:0;color:#fff;}
-
-  /* contact */
-  .contact-wrap{max-width:var(--maxw);margin:0 auto;padding:clamp(48px,7vw,82px) var(--hpad);display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,56px);align-items:start;}
-  .ctitle{font-family:"Saira Condensed",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1;margin:0 0 8px;color:var(--ink);}
-  .csub{color:var(--ink-soft);font-size:16px;margin:0 0 28px;}
-  .clist{list-style:none;padding:0;margin:0;}
-  .clist li{display:flex;gap:15px;margin-bottom:22px;align-items:flex-start;}
-  .ci-ic{width:46px;height:46px;border-radius:11px;background:rgba(94,110,50,.1);color:var(--olive-text);display:flex;align-items:center;justify-content:center;flex:none;}
-  .ci-ic i{font-size:18px;}
-  .ci-t{font-weight:600;color:var(--ink);margin-bottom:2px;}
-  .ci-d{color:var(--ink-soft);font-size:14.5px;}
-  .ci-d a:hover{color:var(--olive-text);}
-
-  .cform{background:var(--bg-alt);border:1px solid var(--line);border-radius:14px;padding:clamp(24px,4vw,36px);}
-  .cform h3{font-family:"Saira Condensed",sans-serif;font-weight:700;text-transform:uppercase;font-size:22px;margin:0 0 6px;color:var(--ink);letter-spacing:.01em;}
-  .cform .note{font-size:13.5px;color:var(--ink-soft);margin:0 0 18px;}
-  .cform label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin:14px 0 6px;}
-  .cform input,.cform textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:12px 14px;font:inherit;font-size:15px;color:var(--ink);background:#fff;transition:border-color .15s,box-shadow .15s;}
-  .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--olive);box-shadow:0 0 0 3px rgba(94,110,50,.16);}
-  .cform textarea{min-height:120px;resize:vertical;}
-  .cform .send{margin-top:22px;width:100%;justify-content:center;}
-
-  .map-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--hpad) clamp(48px,7vw,82px);}
-  .map-wrap iframe{width:100%;height:380px;border:0;border-radius:14px;display:block;}
-  .map-note{font-size:12.5px;color:var(--ink-soft);margin-top:10px;}
-
-  /* footer */
-  .footer{background:var(--black);color:var(--bone);}
-  .footer .in{max-width:var(--maxw);margin:0 auto;padding:clamp(52px,7vw,72px) var(--hpad) 0;}
-  .footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1.4fr;gap:44px;padding-bottom:46px;}
-  .footer .logo{margin-bottom:16px;}
-  .footer .blurb{color:#B6B8AB;font-size:14.5px;margin:0 0 18px;max-width:38ch;}
-  .footer h4{font-family:"Saira Condensed",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:15px;color:#fff;margin:0 0 18px;}
-  .footer .links a{display:block;color:#B6B8AB;padding:6px 0;font-size:14.5px;transition:color .2s;}
-  .footer .links a:hover{color:var(--olive-br);}
-  .footer .contact{list-style:none;padding:0;margin:0;}
-  .footer .contact li{display:flex;gap:11px;color:#B6B8AB;font-size:14.5px;margin-bottom:13px;align-items:flex-start;}
-  .footer .contact svg{width:17px;height:17px;flex:none;color:var(--olive-br);margin-top:3px;}
-  .footer .social{display:flex;gap:11px;margin-top:6px;}
-  .footer .social a{width:38px;height:38px;border:1px solid var(--line-d);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#B6B8AB;transition:background .2s,color .2s,border-color .2s;}
-  .footer .social a:hover{background:var(--olive);color:#fff;border-color:var(--olive);}.footer .social i{font-size:16px;}
-  .copyright{border-top:1px solid var(--line-d);padding:20px 0;text-align:center;font-size:13px;color:#8B8D81;}
-  .copyright b{color:#B6B8AB;font-weight:500;}
-  .wa{position:fixed;right:22px;bottom:22px;z-index:80;display:flex;align-items:center;}
-  .wa .pill{background:#fff;color:#222;font-size:14px;font-weight:600;padding:0 16px;height:46px;display:flex;align-items:center;border-radius:24px;box-shadow:0 8px 24px -8px rgba(0,0,0,.4);margin-right:10px;white-space:nowrap;}
-  .wa .circle{width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px -6px rgba(37,211,102,.5);transition:transform .2s;}
-  .wa:hover .circle{transform:scale(1.07);}.wa .circle i{font-size:30px;line-height:1;color:#fff;}
-
-  @media (max-width:900px){
-    .menu,.nav-icons .search{display:none;}.burger{display:flex;}
-    .menu.open{display:flex;position:fixed;top:78px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(14,15,12,.98);border-bottom:1px solid var(--line-d);padding:6px var(--hpad) 16px;}
-    .menu.open a{padding:15px 0;border-bottom:1px solid var(--line-d);font-size:16px;}
-    .contact-wrap{grid-template-columns:1fr;}
-    .footer .cols{grid-template-columns:1fr 1fr;gap:34px;}
-  }
-  @media (max-width:560px){
-    .topbar .in{gap:16px;font-size:12px;}.topbar .email{display:none;}.wa .pill{display:none;}
-    .footer .cols{grid-template-columns:1fr;gap:30px;}
-  }
-  @media (prefers-reduced-motion:reduce){*{transition-duration:.001s!important;}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<div class="topbar"><div class="in">
-  <a href="tel:+62811XXXXXXX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0811-XXXX-XXXX</a>
-  <a class="email" href="mailto:halo@dealerjeepindo.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>halo@dealerjeepindo.com</a>
-</div></div>
-
-<nav class="nav"><div class="in">
-  <a href="index.html" class="logo">Jeep</a>
-  <div class="menu" id="menu">
-    <a href="index.html">Home</a>
-    <a href="tipe-mobil.html">Tipe Mobil</a>
-    <a href="harga.html">Harga</a>
-    <a href="#">Info &amp; Promo</a>
-    <a href="#">Galeri</a>
-    <a href="#">Video</a>
-    <a href="kontak.html" class="active">Kontak</a>
-  </div>
-  <div class="nav-icons">
-    <button class="search" aria-label="Cari"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
-    <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="menu"><span></span></button>
-  </div>
-</div></nav>
-
-<section class="page-hero"><div class="in">
-  <p class="crumb"><a href="index.html">Home</a> / Kontak</p>
-  <h1>Kontak</h1>
-</div></section>
-
-<section class="contact-wrap">
-  <div class="cinfo">
-    <h2 class="ctitle">Informasi Kontak</h2>
-    <p class="csub">Tim kami siap membantu. Kunjungi showroom atau hubungi langsung lewat saluran berikut.</p>
-    <ul class="clist">
-      <li>
-        <div class="ci-ic"><i class="fa-solid fa-location-dot"></i></div>
-        <div><div class="ci-t">Alamat Showroom</div><div class="ci-d">Jl. Placeholder No. 00, Jakarta Utara, DKI Jakarta</div></div>
-      </li>
-      <li>
-        <div class="ci-ic"><i class="fa-solid fa-phone"></i></div>
-        <div><div class="ci-t">Telepon</div><div class="ci-d"><a href="tel:+62811XXXXXXX">0811-XXXX-XXXX</a></div></div>
-      </li>
-      <li>
-        <div class="ci-ic"><i class="fa-brands fa-whatsapp"></i></div>
-        <div><div class="ci-t">WhatsApp</div><div class="ci-d"><a href="https://wa.me/62811XXXXXXX">0811-XXXX-XXXX</a></div></div>
-      </li>
-      <li>
-        <div class="ci-ic"><i class="fa-solid fa-envelope"></i></div>
-        <div><div class="ci-t">Email</div><div class="ci-d"><a href="mailto:halo@dealerjeepindo.com">halo@dealerjeepindo.com</a></div></div>
-      </li>
-      <li>
-        <div class="ci-ic"><i class="fa-solid fa-clock"></i></div>
-        <div><div class="ci-t">Jam Operasional</div><div class="ci-d">Senin–Sabtu · 09.00–18.00 WIB</div></div>
-      </li>
-    </ul>
-  </div>
-
-  <div class="cform">
-    <h3>Kirim Pesan Cepat</h3>
-    <p class="note">Isi form, pesan otomatis terkirim ke WhatsApp kami.</p>
-    <label for="f-nama">Nama</label>
-    <input type="text" id="f-nama" placeholder="Nama lengkap Anda">
-    <label for="f-hp">No. HP (opsional)</label>
-    <input type="tel" id="f-hp" placeholder="08xx xxxx xxxx">
-    <label for="f-pesan">Pesan</label>
-    <textarea id="f-pesan" placeholder="Saya tertarik dengan unit Jeep..."></textarea>
-    <button type="button" class="wa-btn send" onclick="sendWA()"><i class="fa-brands fa-whatsapp"></i> Kirim via WhatsApp</button>
-  </div>
-</section>
-
-<section class="map-wrap">
-  <iframe title="Lokasi Showroom" src="https://www.google.com/maps?q=Jakarta+Utara,Indonesia&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  <p class="map-note">*Peta masih placeholder (area Jakarta Utara). Ganti dengan link embed lokasi showroom Anda yang sebenarnya.</p>
-</section>
-
-<footer class="footer" id="footer"><div class="in"><div class="cols">
-  <div>
-    <div class="logo">Jeep</div>
-    <p class="blurb">Dealer resmi Jeep di Jakarta. Menghadirkan jajaran lengkap kendaraan Jeep dengan layanan dan garansi resmi.</p>
-    <div class="social">
-      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+<div class="topbar">
+  <div class="wrap topbar__inner">
+    <div class="topbar__left">
+      <a href="tel:081382443832"><i class="fa-solid fa-phone"></i> 0813-8244-3832</a>
+      <a href="https://wa.me/6281382443832" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Sales</a>
     </div>
+    <div class="topbar__right">Senin&ndash;Sabtu &middot; 09.00&ndash;18.00 WIB</div>
   </div>
-  <div>
-    <h4>Menu</h4>
-    <div class="links">
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="index.html" class="brand" aria-label="Dealer Jeep Indonesia">
+      <img src="assets/logo.png" alt="Jeep">
+    </a>
+    <nav class="menu" id="menu">
       <a href="index.html">Home</a>
       <a href="tipe-mobil.html">Tipe Mobil</a>
       <a href="harga.html">Harga</a>
-      <a href="#">Info &amp; Promo</a>
-      <a href="#">Galeri</a>
-      <a href="#">Video</a>
-      <a href="kontak.html">Kontak</a>
+      <a href="kontak.html" class="is-active">Kontak</a>
+    </nav>
+    <div class="nav__right">
+      <a href="https://wa.me/6281382443832?text=Halo%2C%20saya%20mau%20tanya%20unit%20Jeep" target="_blank" class="btn btn--wa">
+        <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+      </a>
+      <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
-  <div>
-    <h4>Kontak</h4>
-    <ul class="contact">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Jl. Placeholder No. 00, Jakarta Utara, DKI Jakarta</span></li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>0811-XXXX-XXXX</span></li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span>halo@dealerjeepindo.com</span></li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Senin–Sabtu · 09.00–18.00 WIB</span></li>
-    </ul>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="page-hero__inner">
+      <div class="crumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Kontak</span>
+      </div>
+      <h1>Hubungi <em>Tim Kami</em></h1>
+      <p>
+        Isi form di bawah atau chat langsung lewat WhatsApp. Konsultasi gratis dan tanpa
+        kewajiban membeli.
+      </p>
+    </div>
   </div>
-</div></div>
-<div class="copyright">© 2026 <b>dealerjeepindo.com</b> — Dealer Resmi Jeep. Hak cipta dilindungi.</div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <div>
+        <span class="eyebrow">Informasi Kontak</span>
+        <h2 class="section__title" style="margin-bottom:32px">Kunjungi <em>Showroom</em> Kami</h2>
+
+        <div class="info-card">
+          <div class="info-card__icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <h3>Alamat Showroom</h3>
+            <p>
+              Plaza Indomobil TB. Simatupang<br>
+              Jl. R.A. Kartini, RT.6/RW.14, Pd. Pinang,<br>
+              Kec. Kebayoran Lama, Jakarta Selatan,<br>
+              DKI Jakarta 12310
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card__icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <div>
+            <h3>WhatsApp</h3>
+            <p><a href="https://wa.me/6281382443832" target="_blank">0813-8244-3832</a> &mdash; respons tercepat</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card__icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <h3>Telepon</h3>
+            <p><a href="tel:081382443832">0813-8244-3832</a></p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card__icon"><i class="fa-regular fa-clock"></i></div>
+          <div>
+            <h3>Jam Operasional</h3>
+            <p>Senin &ndash; Sabtu: 09.00 &ndash; 18.00 WIB<br>Minggu &amp; hari libur: tutup</p>
+          </div>
+        </div>
+
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps?q=Plaza%20Indomobil%20TB%20Simatupang%20Jakarta&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Showroom Jeep"></iframe>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h2>Form Konsultasi Jeep</h2>
+        <p>Isi data Anda, lalu tekan kirim. Pesannya otomatis terkirim ke WhatsApp tim kami.</p>
+
+        <form id="waForm" novalidate>
+
+          <div class="field">
+            <label for="f-nama">Nama Lengkap</label>
+            <input type="text" id="f-nama" placeholder="Nama Anda" required>
+          </div>
+
+          <div class="field">
+            <label for="f-telepon">Nomor WhatsApp</label>
+            <input type="tel" id="f-telepon" placeholder="08xxxxxxxxxx" required>
+          </div>
+
+          <div class="field">
+            <label for="f-model">Tipe yang Diminati</label>
+            <select id="f-model">
+              <option>Rubicon 2 Doors</option>
+              <option>Rubicon 4 Doors</option>
+              <option>Rubicon Whitecap Edition 2026</option>
+              <option>Rubicon 85th Anniversary 2026</option>
+              <option>Rubicon Gladiator</option>
+              <option>Belum tahu, minta rekomendasi</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-tanggal">Rencana Kunjungan ke Showroom</label>
+            <input type="date" id="f-tanggal">
+          </div>
+
+          <div class="field">
+            <label for="f-pesan">Pertanyaan Anda</label>
+            <textarea id="f-pesan" placeholder="Contoh: minta simulasi kredit DP 30% tenor 4 tahun"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--wa btn--lg">
+            <i class="fa-brands fa-whatsapp"></i> Kirim ke WhatsApp
+          </button>
+
+          <div class="form-note">
+            <i class="fa-solid fa-lock"></i>
+            <span>Data Anda hanya dipakai untuk membalas pertanyaan ini.</span>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="section section--sand">
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="cta-band__text">
+        <h2>Siap Membawa Pulang Jeep Impian Anda?</h2>
+        <p>
+          Konsultasikan kebutuhan Anda dengan tim kami sekarang &mdash; gratis dan tanpa kewajiban.
+          Dapatkan penawaran terbaik hari ini.
+        </p>
+      </div>
+      <div class="cta-band__actions">
+        <a href="https://wa.me/6281382443832?text=Halo%2C%20saya%20mau%20konsultasi%20unit%20Jeep" target="_blank" class="btn btn--white btn--lg">
+          <i class="fa-brands fa-whatsapp"></i> Hubungi via WhatsApp
+        </a>
+        <a href="tel:081382443832" class="btn btn--outline-light btn--lg">
+          <i class="fa-solid fa-phone"></i> 0813-8244-3832
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" aria-label="Dealer Jeep Indonesia">
+          <img src="assets/logo.png" alt="Jeep">
+        </a>
+        <p>
+          Dealer resmi Jeep di Jakarta. Menghadirkan jajaran lengkap kendaraan Jeep
+          dengan layanan dan garansi resmi.
+        </p>
+        <div class="socials">
+          <a href="https://wa.me/6281382443832" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <div class="footer__links">
+          <a href="index.html">Home</a>
+          <a href="tipe-mobil.html">Tipe Mobil</a>
+          <a href="harga.html">Harga</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            Plaza Indomobil TB. Simatupang<br>
+            Jl. R.A. Kartini, RT.6/RW.14, Pd. Pinang,<br>
+            Kec. Kebayoran Lama, Jakarta Selatan 12310
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <div><a href="https://wa.me/6281382443832" target="_blank">0813-8244-3832</a></div>
+        </div>
+        <div class="contact-item">
+          <i class="fa-regular fa-clock"></i>
+          <div>Senin&ndash;Sabtu &middot; 09.00&ndash;18.00 WIB</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Dealer Resmi Jeep. Hak cipta dilindungi.</span>
+      <a href="https://wa.me/6281382443832" target="_blank">Hubungi Kami</a>
+    </div>
+  </div>
 </footer>
 
-<a class="wa" href="https://wa.me/62811XXXXXXX?text=Halo%2C%20saya%20mau%20tanya%20unit%20Jeep" aria-label="Hubungi via WhatsApp">
-  <span class="pill">Hubungi Kami</span><span class="circle"><i class="fa-brands fa-whatsapp"></i></span>
+<a href="https://wa.me/6281382443832?text=Halo%2C%20saya%20mau%20tanya%20unit%20Jeep" target="_blank" class="wa-float" aria-label="Chat WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-<script>
-(function(){var b=document.getElementById('burger'),m=document.getElementById('menu');b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);});m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.setAttribute('aria-expanded','false');});});})();
-function sendWA(){
-  var n=(document.getElementById('f-nama').value||'').trim();
-  var p=(document.getElementById('f-hp').value||'').trim();
-  var m=(document.getElementById('f-pesan').value||'').trim();
-  var t='Halo, saya '+(n||'(nama)')+'.';
-  if(p) t+=' No. HP: '+p+'.';
-  t+=' '+(m||'Saya ingin bertanya tentang unit Jeep.');
-  window.open('https://wa.me/62811XXXXXXX?text='+encodeURIComponent(t),'_blank');
-}
-</script>
+<script src="assets/script.js"></script>
 </body>
 </html>
